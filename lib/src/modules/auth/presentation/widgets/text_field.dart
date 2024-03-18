@@ -6,7 +6,7 @@ import '../../../../infrastructure/consts/styles.dart';
 class CTextField extends StatefulWidget {
   const CTextField({
     super.key,
-    this.fillColor = AppColors.greyDark,
+    this.fillColor = Colors.white,
     this.focusColor = AppColors.focusedField,
     this.hintText,
     this.cursorColor = Colors.white,

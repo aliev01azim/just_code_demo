@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:code_demo/src/modules/auth/presentation/screens/login/bloc/login_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -16,8 +19,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
-  bool emailEnable = false;
   @override
   void dispose() {
     _emailController.dispose();
@@ -25,9 +28,6 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
-  final _passwordController = TextEditingController();
-  bool isError = false;
-  bool passwordEnable = false;
   bool hide = true;
 
   @override
@@ -59,17 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
                 controller: _emailController,
-                onChanged: (p02) {
-                  if (p02.isNotEmpty) {
-                    setState(() {
-                      emailEnable = true;
-                    });
-                  } else {
-                    setState(() {
-                      emailEnable = false;
-                    });
-                  }
-                },
+                onChanged: (p02) {},
               ),
               const SizedBox(height: 24),
               Text(
@@ -78,9 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 16),
               CTextField(
-                style: TextStyles.main(
-                    color: isError ? AppColors.red : Colors.white),
-                errorTextStyle: TextStyles.textGrey(color: AppColors.red),
+                style: TextStyles.main(color: Colors.black),
                 obscureText: hide,
                 suffixIcon: InkWell(
                     onTap: () {
@@ -92,44 +80,50 @@ class _LoginScreenState extends State<LoginScreen> {
                       hide
                           ? Icons.remove_red_eye_outlined
                           : Icons.visibility_off_outlined,
-                      color: Colors.white,
+                      color: Colors.black,
                     )),
-                prefix: const SizedBox(width: 16),
                 validator: (p03) {
                   if (p03 != null && p03.length < 8) {
-                    setState(() {
-                      isError = true;
-                    });
                     return 'Use at least 8 characters';
                   }
-                  setState(() {
-                    isError = false;
-                  });
                   return null;
                 },
                 controller: _passwordController,
-                onChanged: (p03) {
-                  if (p03.isNotEmpty) {
-                    setState(() {
-                      passwordEnable = true;
-                    });
-                  } else {
-                    setState(() {
-                      passwordEnable = false;
-                    });
-                  }
-                },
+                onChanged: (p03) {},
               ),
               const SizedBox(height: 24),
               Align(
                 alignment: Alignment.center,
-                child: MiniBtn(
-                  isLoading: false,
-                  onTap: () async {
-                    if (formKey.currentState?.validate() == true) {}
+                child: BlocConsumer<LoginBloc, LoginState>(
+                  listener: (context, state) {
+                    if (state.user != null) {
+                      log('success');
+                      // Navigator.of(context).pushNamed(routeName);
+                    }
+                    if (state.error != null) {
+                      showDialog(
+                        context: context,
+                        builder: (context) => Text(
+                          state.error!,
+                          style: TextStyles.textTitle(
+                              color: Colors.white, fontSize: 40),
+                        ),
+                      );
+                    }
                   },
-                  text: 'Next',
-                  enable: emailEnable && passwordEnable,
+                  builder: (context, state) {
+                    return MiniBtn(
+                      isLoading: state.loading,
+                      onTap: () async {
+                        if (formKey.currentState?.validate() == true) {
+                          context.read<LoginBloc>().add(LoginEvent.logging(
+                              email: _emailController.text,
+                              password: _passwordController.text));
+                        }
+                      },
+                      text: 'Next',
+                    );
+                  },
                 ),
               ),
               const SizedBox(height: 24),
