@@ -1,3 +1,6 @@
+// Project imports:
+import '../../data/dto/user_dto.dart';
+
 class UserModel {
   final int id;
   final String name;
@@ -15,15 +18,12 @@ class UserModel {
       name: name ?? this.name,
     );
   }
-
- 
-  factory UserModel.fromJson(Map<String, dynamic> map) {
+  factory UserModel.fromDTO(UserDTO userDTO) {
     return UserModel(
-      id: map['id'] as int,
-      name: map['name'] as String,
+      id: userDTO.id,
+      name: userDTO.name,
     );
   }
-
 
   @override
   String toString() => 'UserModel(id: $id, name: $name)';

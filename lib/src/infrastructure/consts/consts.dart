@@ -1,18 +1,12 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Package imports:
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
-class Images {
-  static const logo = 'assets/images/spotify.png';
-  static const google = 'assets/images/google.png';
-  static const googleSvg = 'assets/images/google.svg';
-  static const verified = 'assets/images/verified.svg';
-  static const f = 'assets/images/f.svg';
-  static const i1 = 'assets/images/1.png';
-  static const i2 = 'assets/images/2.png';
-  static const i3 = 'assets/images/3.png';
-  static const i01 = 'assets/images/01.png';
-  static const irect = 'assets/images/artist_rectangle.png';
-}
+//всякие константы
+class Images {}
 
 class AppColors {
   static const black = Colors.black;
@@ -22,8 +16,17 @@ class AppColors {
   static const red = Color.fromRGBO(195, 44, 48, 1);
 }
 
-class Boxes{
-  static const String userBox = 'userBox';
-}
+enum Boxes { userBox, tokenBox }
 
-enum UserBox{email,password,gender,artists}
+const supportedLocales = [
+  Locale('en', ''),
+  Locale('ru', ''),
+];
+
+const localizationsDelegates = [
+  AppLocalizations.delegate,
+  GlobalMaterialLocalizations.delegate,
+  GlobalWidgetsLocalizations.delegate,
+  GlobalCupertinoLocalizations.delegate,
+];
+const restorationScopeId = 'restorationIdAfterPhoneRotate';//For example)

@@ -1,23 +1,31 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
-class SearchTab extends StatefulWidget {
-  const SearchTab({super.key});
+// Package imports:
+import 'package:auto_route/auto_route.dart';
+
+@RoutePage()
+class SearchTabScreen extends StatefulWidget {
+  const SearchTabScreen({super.key});
 
   @override
-  State<SearchTab> createState() => _SearchTabState();
+  State<SearchTabScreen> createState() => _SearchTabScreenState();
 }
 
-class _SearchTabState extends State<SearchTab> {
+class _SearchTabScreenState extends State<SearchTabScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Search tab screen')
-          ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Поиск'),
+      ),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [Text('Search tab screen')],
+          ),
         ),
       ),
     );

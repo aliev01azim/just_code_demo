@@ -16,43 +16,43 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$LoginEvent {
-  String get email => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password) logging,
+    required TResult Function() hidePassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)? logging,
+    TResult? Function()? hidePassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? logging,
+    TResult Function()? hidePassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Logging value) logging,
+    required TResult Function(HidePassword value) hidePassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Logging value)? logging,
+    TResult? Function(HidePassword value)? hidePassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Logging value)? logging,
+    TResult Function(HidePassword value)? hidePassword,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $LoginEventCopyWith<LoginEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -61,8 +61,6 @@ abstract class $LoginEventCopyWith<$Res> {
   factory $LoginEventCopyWith(
           LoginEvent value, $Res Function(LoginEvent) then) =
       _$LoginEventCopyWithImpl<$Res, LoginEvent>;
-  @useResult
-  $Res call({String email, String password});
 }
 
 /// @nodoc
@@ -74,33 +72,13 @@ class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? email = null,
-    Object? password = null,
-  }) {
-    return _then(_value.copyWith(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$LoggingImplCopyWith<$Res>
-    implements $LoginEventCopyWith<$Res> {
+abstract class _$$LoggingImplCopyWith<$Res> {
   factory _$$LoggingImplCopyWith(
           _$LoggingImpl value, $Res Function(_$LoggingImpl) then) =
       __$$LoggingImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({String email, String password});
 }
@@ -170,6 +148,7 @@ class _$LoggingImpl implements Logging {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password) logging,
+    required TResult Function() hidePassword,
   }) {
     return logging(email, password);
   }
@@ -178,6 +157,7 @@ class _$LoggingImpl implements Logging {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String email, String password)? logging,
+    TResult? Function()? hidePassword,
   }) {
     return logging?.call(email, password);
   }
@@ -186,6 +166,7 @@ class _$LoggingImpl implements Logging {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email, String password)? logging,
+    TResult Function()? hidePassword,
     required TResult orElse(),
   }) {
     if (logging != null) {
@@ -198,6 +179,7 @@ class _$LoggingImpl implements Logging {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Logging value) logging,
+    required TResult Function(HidePassword value) hidePassword,
   }) {
     return logging(this);
   }
@@ -206,6 +188,7 @@ class _$LoggingImpl implements Logging {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Logging value)? logging,
+    TResult? Function(HidePassword value)? hidePassword,
   }) {
     return logging?.call(this);
   }
@@ -214,6 +197,7 @@ class _$LoggingImpl implements Logging {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Logging value)? logging,
+    TResult Function(HidePassword value)? hidePassword,
     required TResult orElse(),
   }) {
     if (logging != null) {
@@ -228,14 +212,113 @@ abstract class Logging implements LoginEvent {
       {required final String email,
       required final String password}) = _$LoggingImpl;
 
-  @override
   String get email;
-  @override
   String get password;
-  @override
   @JsonKey(ignore: true)
   _$$LoggingImplCopyWith<_$LoggingImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$HidePasswordImplCopyWith<$Res> {
+  factory _$$HidePasswordImplCopyWith(
+          _$HidePasswordImpl value, $Res Function(_$HidePasswordImpl) then) =
+      __$$HidePasswordImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$HidePasswordImplCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$HidePasswordImpl>
+    implements _$$HidePasswordImplCopyWith<$Res> {
+  __$$HidePasswordImplCopyWithImpl(
+      _$HidePasswordImpl _value, $Res Function(_$HidePasswordImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$HidePasswordImpl implements HidePassword {
+  const _$HidePasswordImpl();
+
+  @override
+  String toString() {
+    return 'LoginEvent.hidePassword()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$HidePasswordImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password) logging,
+    required TResult Function() hidePassword,
+  }) {
+    return hidePassword();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password)? logging,
+    TResult? Function()? hidePassword,
+  }) {
+    return hidePassword?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password)? logging,
+    TResult Function()? hidePassword,
+    required TResult orElse(),
+  }) {
+    if (hidePassword != null) {
+      return hidePassword();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Logging value) logging,
+    required TResult Function(HidePassword value) hidePassword,
+  }) {
+    return hidePassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Logging value)? logging,
+    TResult? Function(HidePassword value)? hidePassword,
+  }) {
+    return hidePassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Logging value)? logging,
+    TResult Function(HidePassword value)? hidePassword,
+    required TResult orElse(),
+  }) {
+    if (hidePassword != null) {
+      return hidePassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HidePassword implements LoginEvent {
+  const factory HidePassword() = _$HidePasswordImpl;
 }
 
 /// @nodoc
@@ -412,12 +495,11 @@ class _$InitialImpl implements Initial {
             (identical(other.show, show) || other.show == show) &&
             (identical(other.loading, loading) || other.loading == loading) &&
             (identical(other.error, error) || other.error == error) &&
-            const DeepCollectionEquality().equals(other.user, user));
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, show, loading, error,
-      const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, show, loading, error, user);
 
   @JsonKey(ignore: true)
   @override

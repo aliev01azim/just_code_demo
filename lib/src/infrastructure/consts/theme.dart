@@ -1,8 +1,14 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
-import 'consts.dart';
+class MyAppTheme {
+  static ThemeData lightTheme = ThemeData(
+    brightness: Brightness.light,
+    primaryColor: Colors.blue,
+  );
 
-final theme = ThemeData(
-  scaffoldBackgroundColor: AppColors.black,
-  buttonTheme: const ButtonThemeData(disabledColor: AppColors.greyDark),
-);
+  static ThemeData darkTheme = ThemeData(
+    brightness: Brightness.dark,
+    primaryColor: Colors.teal,
+  );
+}

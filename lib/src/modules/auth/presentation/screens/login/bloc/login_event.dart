@@ -4,4 +4,5 @@ part of 'login_bloc.dart';
 class LoginEvent with _$LoginEvent {
   const factory LoginEvent.logging(
       {required String email, required String password}) = Logging;
+  const factory LoginEvent.hidePassword() = HidePassword;
 }

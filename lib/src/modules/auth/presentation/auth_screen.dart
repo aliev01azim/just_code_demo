@@ -1,6 +1,26 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+// Project imports:
+import 'package:code_demo/src/infrastructure/consts/consts.dart';
+import 'package:code_demo/src/infrastructure/routes/routes.dart';
+import '../../../infrastructure/services/hive_service.dart';
+
+@RoutePage()
+class AuthModuleScreen extends StatelessWidget {
+  const AuthModuleScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const AutoRouter();
+  }
+}
+
+@RoutePage()
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
 
@@ -19,10 +39,11 @@ class AuthScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               ElevatedButton(
-                  onPressed: () => Navigator.of(context).pushNamed('/login'),
+                  onPressed: () => context.pushRoute(const LoginRoute()),
                   child: Text(AppLocalizations.of(context)!.login)),
               ElevatedButton(
-                  onPressed: () => Navigator.of(context).pushNamed('/signin'),
+                  onPressed: () =>
+                      context.pushRoute(const SigninWrapperRoute()),
                   child: Text(AppLocalizations.of(context)!.signin)),
             ],
           ),

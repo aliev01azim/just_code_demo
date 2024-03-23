@@ -1,7 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
-import 'consts.dart';
-
+  //стили текстов во всём приложении
 class TextStyles {
   static TextStyle main(
           {double fontSize = 14, FontWeight fontWeight = FontWeight.bold,Color color = Colors.black}) =>
