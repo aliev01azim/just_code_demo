@@ -16,4 +16,5 @@ abstract class AuthDataSource {
 
   Future<void> saveToken(AuthToken token);
   AuthToken? getToken();
+  Future<Either<RefreshException, AuthToken>> refreshToken(String refresh);
 }

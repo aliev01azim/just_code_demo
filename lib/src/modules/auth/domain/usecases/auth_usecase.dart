@@ -21,7 +21,7 @@ class AuthUseCase {
     return _repository.loginUser(email: email, password: password);
   }
 
-  Future<void> logOut() {
-    return _repository.logOut();
+  Future<void> logOut() async {
+    await _repository.logOut();
   }
 }

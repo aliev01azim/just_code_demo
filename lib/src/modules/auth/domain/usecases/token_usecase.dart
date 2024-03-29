@@ -1,4 +1,7 @@
 // Project imports:
+import 'package:dartz/dartz.dart';
+
+import '../../../../infrastructure/utils/exceptions.dart';
 import '../../data/dto/token.dart';
 import '../../data/repositories/auth_repository.dart';
 
@@ -15,4 +18,7 @@ class TokenUseCase {
     return _repository.getToken();
   }
 
+   Future<Either<RefreshException, AuthToken>> refreshToken(String refresh) async {
+    return await _repository.refreshToken(refresh);
+  }
 }

@@ -5,14 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // Project imports:
-import 'package:code_demo/src/infrastructure/routes/routes.dart';
+import '../di.dart';
 import 'infrastructure/consts/consts.dart';
 import 'infrastructure/consts/theme.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({
+class App extends StatelessWidget {
+  const App({
     super.key,
   });
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       restorationScopeId: restorationScopeId,
       localizationsDelegates: localizationsDelegates,
       supportedLocales: supportedLocales,
-      routerConfig: AppRouter().config(),
+      routerConfig: di.appRouter.config(),
       onGenerateTitle: (BuildContext context) =>
           AppLocalizations.of(context)!.appTitle,
       debugShowCheckedModeBanner: false,

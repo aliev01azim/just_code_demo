@@ -5,26 +5,26 @@ import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 
 @RoutePage()
-class ProfileTabScreen extends StatefulWidget {
-  const ProfileTabScreen({super.key});
+class SearchModuleScreen extends StatefulWidget {
+  const SearchModuleScreen({super.key});
 
   @override
-  State<ProfileTabScreen> createState() => _ProfileTabScreenState();
+  State<SearchModuleScreen> createState() => _SearchModuleScreenState();
 }
 
-class _ProfileTabScreenState extends State<ProfileTabScreen> {
+class _SearchModuleScreenState extends State<SearchModuleScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Профиль'),
+        title: const Text('Поиск'),
       ),
       body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [Text('Profile tab screen')],
+            children: [Text('Тут просто текст поиск')],
           ),
         ),
       ),

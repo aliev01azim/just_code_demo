@@ -6,7 +6,7 @@ import 'package:code_demo/src/modules/auth/data/dto/token.dart';
 import 'package:code_demo/src/modules/auth/domain/entities/user.dart';
 import '../../../../infrastructure/utils/exceptions.dart';
 import '../../domain/entities/user_with_token.dart';
-import '../datasources/auth_data_source.dart';
+import '../data_sources/auth_data_source.dart';
 import '../dto/user_dto.dart';
 import 'auth_repository.dart';
 
@@ -45,6 +45,11 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
+  Future<void> logOut() async {
+    await _remoteDataSource.logOut();
+  }
+
+  @override
   AuthToken? getToken() {
     return _remoteDataSource.getToken();
   }
@@ -55,7 +60,8 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<void> logOut() async {
-    await _remoteDataSource.logOut();
+  Future<Either<RefreshException, AuthToken>> refreshToken(
+      String refresh) async {
+    return await _remoteDataSource.refreshToken(refresh);
   }
 }

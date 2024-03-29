@@ -12,4 +12,16 @@ class LazyLoadResponse<T> {
       required this.currentPage,
       required this.totalPages});
   bool get hasMore => currentPage < totalPages;
+
+  LazyLoadResponse<U> map<U>(U Function(T) mapper) {
+    //этот маппер преобразует из LazyLoadResponse<DTO> в LazyLoadResponse<Entitiy>
+    final mappedData = data.map(mapper).toList();
+    return LazyLoadResponse<U>(
+      statusCode: statusCode,
+      headers: headers,
+      data: mappedData,
+      currentPage: currentPage,
+      totalPages: totalPages,
+    );
+  }
 }

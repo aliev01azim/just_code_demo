@@ -2,5 +2,6 @@
   "appTitle": "Code demonstration app",
   "auth": "Authtorization",
   "login": "Log in",
-  "signin": "Sign In"
+  "signin": "Sign In",
+  "no_internet": "No internet connection"
 }

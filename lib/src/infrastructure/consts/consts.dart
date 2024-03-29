@@ -1,11 +1,15 @@
 // Flutter imports:
+import 'package:code_demo/di.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 // Package imports:
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 //всякие константы
+const baseUrl = 'https://jsonplaceholder.typicode.com/';
+
 class Images {}
 
 class AppColors {
@@ -29,4 +33,6 @@ const localizationsDelegates = [
   GlobalWidgetsLocalizations.delegate,
   GlobalCupertinoLocalizations.delegate,
 ];
-const restorationScopeId = 'restorationIdAfterPhoneRotate';//For example)
+const restorationScopeId = 'restorationIdAfterPhoneRotate'; //For example)
+
+

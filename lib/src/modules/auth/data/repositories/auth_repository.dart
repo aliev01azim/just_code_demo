@@ -14,4 +14,5 @@ abstract class AuthRepository {
   Future<void> logOut();
   Future<void> saveToken(AuthToken token);
   AuthToken? getToken();
+  Future<Either<RefreshException, AuthToken>> refreshToken(String refresh);
 }

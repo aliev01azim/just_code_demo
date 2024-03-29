@@ -15,6 +15,12 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AppWrapperRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AppWrapperScreen(),
+      );
+    },
     AuthModuleRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -25,6 +31,12 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const AuthScreen(),
+      );
+    },
+    BottomNavBarRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const BottomNavBarScreen(),
       );
     },
     EmailRoute.name: (routeData) {
@@ -39,10 +51,10 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const HomeModuleScreen(),
       );
     },
-    HomeTabRoute.name: (routeData) {
+    HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const HomeTabScreen(),
+        child: const HomeScreen(),
       );
     },
     LoginRoute.name: (routeData) {
@@ -61,16 +73,16 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
-    ProfileTabRoute.name: (routeData) {
+    ProfileModuleRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ProfileTabScreen(),
+        child: const ProfileModuleScreen(),
       );
     },
-    SearchTabRoute.name: (routeData) {
+    SearchModuleRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const SearchTabScreen(),
+        child: const SearchModuleScreen(),
       );
     },
     SigninWrapperRoute.name: (routeData) {
@@ -80,6 +92,20 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [AppWrapperScreen]
+class AppWrapperRoute extends PageRouteInfo<void> {
+  const AppWrapperRoute({List<PageRouteInfo>? children})
+      : super(
+          AppWrapperRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AppWrapperRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -106,6 +132,20 @@ class AuthRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'AuthRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [BottomNavBarScreen]
+class BottomNavBarRoute extends PageRouteInfo<void> {
+  const BottomNavBarRoute({List<PageRouteInfo>? children})
+      : super(
+          BottomNavBarRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'BottomNavBarRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -139,15 +179,15 @@ class HomeModuleRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [HomeTabScreen]
-class HomeTabRoute extends PageRouteInfo<void> {
-  const HomeTabRoute({List<PageRouteInfo>? children})
+/// [HomeScreen]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
       : super(
-          HomeTabRoute.name,
+          HomeRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'HomeTabRoute';
+  static const String name = 'HomeRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -205,29 +245,29 @@ class PasswordRouteArgs {
 }
 
 /// generated route for
-/// [ProfileTabScreen]
-class ProfileTabRoute extends PageRouteInfo<void> {
-  const ProfileTabRoute({List<PageRouteInfo>? children})
+/// [ProfileModuleScreen]
+class ProfileModuleRoute extends PageRouteInfo<void> {
+  const ProfileModuleRoute({List<PageRouteInfo>? children})
       : super(
-          ProfileTabRoute.name,
+          ProfileModuleRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'ProfileTabRoute';
+  static const String name = 'ProfileModuleRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [SearchTabScreen]
-class SearchTabRoute extends PageRouteInfo<void> {
-  const SearchTabRoute({List<PageRouteInfo>? children})
+/// [SearchModuleScreen]
+class SearchModuleRoute extends PageRouteInfo<void> {
+  const SearchModuleRoute({List<PageRouteInfo>? children})
       : super(
-          SearchTabRoute.name,
+          SearchModuleRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'SearchTabRoute';
+  static const String name = 'SearchModuleRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
