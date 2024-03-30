@@ -1,3 +1,4 @@
+// Project imports:
 import '../../data/dto/post_dto.dart';
 
 class PostModel {

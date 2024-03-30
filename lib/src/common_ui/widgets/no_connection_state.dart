@@ -1,6 +1,8 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+// Project imports:
 import '../../infrastructure/consts/styles.dart';
 
 class NoConnectionStateWidget extends StatelessWidget {

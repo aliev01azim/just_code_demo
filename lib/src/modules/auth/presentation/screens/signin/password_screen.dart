@@ -8,7 +8,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // Project imports:
-import 'package:code_demo/src/infrastructure/utils/extensions.dart';
 import 'package:code_demo/src/modules/auth/presentation/screens/signin/bloc/signin_bloc.dart';
 import '../../../../../infrastructure/consts/styles.dart';
 import '../../../../../infrastructure/routes/routes.dart';
@@ -43,8 +42,8 @@ class _PasswordScreenState extends State<PasswordScreen> {
         listener: (context, state) {
           if (state.user != null) {
             context.router.pushAndPopUntil(
-              const HomeModuleRoute(),
-              predicate: (route) => route is HomeModuleRoute,
+              const BottomNavBarRoute(),
+              predicate: (route) => route is BottomNavBarRoute,
             );
           }
           if (state.error != null) {

@@ -1,5 +1,7 @@
+// Dart imports:
 import 'dart:async';
 
+// Package imports:
 import 'package:connectivity_plus/connectivity_plus.dart';
 
 /// A service class for managing connectivity status.

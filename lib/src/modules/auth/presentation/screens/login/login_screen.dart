@@ -1,6 +1,3 @@
-// Dart imports:
-import 'dart:developer';
-
 // Flutter imports:
 import 'package:flutter/material.dart';
 
@@ -12,11 +9,9 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // Project imports:
 import 'package:code_demo/src/infrastructure/routes/routes.dart';
-import 'package:code_demo/src/infrastructure/services/hive_service.dart';
 import 'package:code_demo/src/infrastructure/utils/extensions.dart';
 import 'package:code_demo/src/modules/auth/presentation/screens/login/bloc/login_bloc.dart';
 import '../../../../../../di.dart';
-import '../../../../../infrastructure/consts/consts.dart';
 import '../../../../../infrastructure/consts/styles.dart';
 import '../../widgets/mini_btn.dart';
 import '../../widgets/text_field.dart';
@@ -53,8 +48,8 @@ class _LoginScreenState extends State<LoginScreen> {
           listener: (context, state) {
             if (state.user != null) {
               context.router.pushAndPopUntil(
-                const HomeModuleRoute(),
-                predicate: (route) => route is HomeModuleRoute,
+                const BottomNavBarRoute(),
+                predicate: (route) => route is BottomNavBarRoute,
               );
             }
             if (state.error != null) {

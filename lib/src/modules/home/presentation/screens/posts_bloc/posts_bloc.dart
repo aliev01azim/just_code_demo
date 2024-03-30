@@ -1,9 +1,17 @@
-import 'package:code_demo/src/modules/home/domain/usecases/token_usecase.dart';
+// Flutter imports:
 import 'package:flutter/foundation.dart';
+
+// Package imports:
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+// Project imports:
+import 'package:code_demo/src/modules/home/domain/usecases/token_usecase.dart';
 import '../../../domain/entities/post.dart';
+
+// ignore: depend_on_referenced_packages
+
 
 part 'posts_state.dart';
 part 'posts_event.dart';
@@ -33,6 +41,6 @@ class PostsBloc extends Bloc<PostsEvent, PostsState> {
           ));
         },
       );
-    });
+    }, transformer: droppable());
   }
 }

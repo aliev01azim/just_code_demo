@@ -1,7 +1,9 @@
 // Package imports:
+// ignore_for_file: depend_on_referenced_packages
+
+// Package imports:
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:meta/meta.dart';
 
 // Project imports:
 import '../../../../domain/entities/user.dart';

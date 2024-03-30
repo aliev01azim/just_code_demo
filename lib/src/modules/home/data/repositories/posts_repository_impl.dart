@@ -1,15 +1,11 @@
 // Package imports:
-import 'package:code_demo/src/infrastructure/models/lazy_load_response.dart';
-import 'package:code_demo/src/modules/home/domain/entities/post.dart';
 import 'package:dartz/dartz.dart';
 
 // Project imports:
-import 'package:code_demo/src/modules/auth/data/dto/token.dart';
-import 'package:code_demo/src/modules/auth/domain/entities/user.dart';
+import '../../../../infrastructure/models/lazy_load_response.dart';
 import '../../../../infrastructure/utils/exceptions.dart';
-
+import '../../domain/entities/post.dart';
 import '../data_sources/posts_data_source.dart';
-import '../dto/post_dto.dart';
 import 'posts_repository.dart';
 
 class PostsRepositoryImpl implements PostsRepository {

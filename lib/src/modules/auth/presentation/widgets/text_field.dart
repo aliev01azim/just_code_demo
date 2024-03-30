@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // Project imports:
-import '../../../../infrastructure/consts/consts.dart';
 import '../../../../infrastructure/consts/styles.dart';
 
 class CTextField extends StatefulWidget {

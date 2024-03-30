@@ -1,8 +1,5 @@
 // ignore_for_file: depend_on_referenced_packages
 
-// Dart imports:
-import 'dart:developer';
-
 // Package imports:
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

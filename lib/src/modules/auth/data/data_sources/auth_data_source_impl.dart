@@ -1,11 +1,11 @@
 // Package imports:
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 // Project imports:
 import 'package:code_demo/src/infrastructure/services/hive_service.dart';
 import 'package:code_demo/src/modules/auth/data/dto/token.dart';
 import 'package:code_demo/src/modules/auth/data/dto/user_dto.dart';
-import 'package:dio/dio.dart';
 import '../../../../infrastructure/utils/exceptions.dart';
 import 'auth_data_source.dart';
 

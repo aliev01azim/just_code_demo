@@ -1,12 +1,10 @@
 // Package imports:
-import 'dart:developer';
-
-import 'package:code_demo/src/infrastructure/models/lazy_load_response.dart';
-import 'package:code_demo/src/modules/home/data/dto/post_dto.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 // Project imports:
-import 'package:dio/dio.dart';
+import 'package:code_demo/src/infrastructure/models/lazy_load_response.dart';
+import 'package:code_demo/src/modules/home/data/dto/post_dto.dart';
 import '../../../../infrastructure/utils/exceptions.dart';
 import 'posts_data_source.dart';
 

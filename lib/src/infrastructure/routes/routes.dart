@@ -5,9 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 
 // Project imports:
-import '../../modules/auth/presentation/auth_screen.dart';
 import '../../../di.dart';
 import '../../app_wrapper.dart';
+import '../../modules/auth/domain/usecases/auth_usecase.dart';
+import '../../modules/auth/presentation/auth_screen.dart';
 import '../../modules/auth/presentation/screens/login/login_screen.dart';
 import '../../modules/auth/presentation/screens/signin/email_screen.dart';
 import '../../modules/auth/presentation/screens/signin/password_screen.dart';

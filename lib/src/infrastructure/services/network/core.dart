@@ -1,8 +1,10 @@
+// Dart imports:
 import 'dart:async';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
+// Project imports:
 import '../../../../di.dart';
 import '../../../common_ui/widgets/no_connection_state.dart';
 

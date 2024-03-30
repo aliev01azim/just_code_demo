@@ -1,10 +1,12 @@
-import 'package:code_demo/src/infrastructure/consts/consts.dart';
-import 'package:code_demo/src/modules/auth/domain/usecases/auth_usecase.dart';
+// Package imports:
 import 'package:dio/dio.dart';
 
+// Project imports:
+import 'package:code_demo/src/infrastructure/consts/consts.dart';
+import 'package:code_demo/src/modules/auth/domain/usecases/auth_usecase.dart';
 import '../../../modules/auth/domain/usecases/token_usecase.dart';
-import 'connection_service.dart';
 import 'app_interceptor.dart';
+import 'connection_service.dart';
 
 class DioConfig {
   static final DioConfig _instance = DioConfig._();

@@ -1,6 +1,7 @@
-// Project imports:
+// Package imports:
 import 'package:dartz/dartz.dart';
 
+// Project imports:
 import '../../../../infrastructure/utils/exceptions.dart';
 import '../../data/dto/token.dart';
 import '../../data/repositories/auth_repository.dart';

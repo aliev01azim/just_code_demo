@@ -1,14 +1,15 @@
-// Flutter imports:
 
-import 'package:another_flushbar/flushbar.dart';
-import 'package:code_demo/src/infrastructure/consts/consts.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 
 // Package imports:
+import 'package:another_flushbar/flushbar.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 // Project imports:
+import 'package:code_demo/src/infrastructure/consts/consts.dart';
+import '../../../bottom_nav_bar/presentation/cubit/bottom_nav_bar_cubit.dart';
 import 'posts_bloc/posts_bloc.dart';
 
 @RoutePage()
@@ -50,7 +51,7 @@ class HomeScreenState extends State<HomeScreen> {
   }
 
   void _onScroll() {
-    if (_scrollController.position.pixels ==
+    if (_scrollController.position.pixels >=
         _scrollController.position.maxScrollExtent) {
       _isEndReached = true;
       _fetchPosts();
@@ -76,6 +77,11 @@ class HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home module'),
+        actions: [
+          IconButton(
+              onPressed: () => context.read<BottomNavBarCubit>().logOut(),
+              icon: const Icon(Icons.logout))
+        ],
       ),
       body: RefreshIndicator(
         onRefresh: _refresh,

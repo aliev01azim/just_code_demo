@@ -1,21 +1,21 @@
-// Project imports:
-import 'package:code_demo/src/infrastructure/services/network/dio.dart';
-import 'package:code_demo/src/modules/auth/domain/usecases/token_usecase.dart';
+// Package imports:
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:dio/dio.dart';
-import 'src/infrastructure/consts/consts.dart';
+
+// Project imports:
 import 'src/infrastructure/routes/routes.dart';
 import 'src/infrastructure/services/network/connection_service.dart';
+import 'src/infrastructure/services/network/dio.dart';
 import 'src/modules/auth/data/data_sources/auth_data_source_impl.dart';
 import 'src/modules/auth/data/repositories/auth_repository_impl.dart';
 import 'src/modules/auth/domain/usecases/auth_usecase.dart';
+import 'src/modules/auth/domain/usecases/token_usecase.dart';
 import 'src/modules/home/data/data_sources/posts_data_source_impl.dart';
 import 'src/modules/home/data/repositories/posts_repository_impl.dart';
 import 'src/modules/home/domain/usecases/token_usecase.dart';
 
-final di = _DIContainer();
+final di = DIContainer();
 
-class _DIContainer {
+class DIContainer {
   Future<void> initDependencies() async {
     connectivityService = await ConnectivityService(Connectivity()).init();
     dioConfig = DioConfig();

@@ -1,7 +1,5 @@
 // Flutter imports:
-import 'package:code_demo/di.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 // Package imports:
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

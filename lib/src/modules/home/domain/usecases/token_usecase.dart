@@ -1,6 +1,7 @@
-// Project imports:
+// Package imports:
 import 'package:dartz/dartz.dart';
 
+// Project imports:
 import '../../../../infrastructure/models/lazy_load_response.dart';
 import '../../../../infrastructure/utils/exceptions.dart';
 import '../../data/repositories/posts_repository.dart';

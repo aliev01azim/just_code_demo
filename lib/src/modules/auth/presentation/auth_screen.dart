@@ -6,9 +6,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // Project imports:
-import 'package:code_demo/src/infrastructure/consts/consts.dart';
 import 'package:code_demo/src/infrastructure/routes/routes.dart';
-import '../../../infrastructure/services/hive_service.dart';
 
 @RoutePage()
 class AuthModuleScreen extends StatelessWidget {

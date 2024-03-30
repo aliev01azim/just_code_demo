@@ -1,9 +1,10 @@
+// Package imports:
+import 'package:dio/dio.dart';
+
+// Project imports:
 import 'package:code_demo/src/infrastructure/services/hive_service.dart';
 import 'package:code_demo/src/infrastructure/services/network/connection_service.dart';
 import 'package:code_demo/src/modules/auth/domain/usecases/auth_usecase.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:dio/dio.dart';
-
 import '../../../../di.dart';
 import '../../../modules/auth/domain/usecases/token_usecase.dart';
 import '../../routes/routes.dart';
